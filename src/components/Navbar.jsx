@@ -10,6 +10,9 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOn, setIsOn] = useState(false);
+  const [isActive, setIsActive] = useState("About Us");
+
+  const links = ["About Us", "Product", "Resource", "Contact"];
 
   return (
     <div className="w-full max-w-[1440px] mx-auto ">
@@ -106,18 +109,16 @@ const Navbar = () => {
           <h2 className="text-2xl font-bold">Alarado</h2>
         </div>
         <ul className="flex items-center gap-5 *:cursor-pointer">
-          <li className="hover:opacity-85">
-            <a href="#">About Us</a>
-          </li>
-          <li className="hover:opacity85">
-            <a href="#">Product</a>
-          </li>
-          <li className="hover:opacity85">
-            <a href="#">Resource</a>
-          </li>
-          <li className="hover:opacity85">
-            <a href="#">Contact</a>
-          </li>
+          {links.map((link)=>(
+            <li key={link}>
+              <button className={`relative text-gray-600 hover:text-[#334aae] transition-colors duration-300 ${isActive === link ? "text-[#334aae]": ""}`} onClick={()=> setIsActive(link)}>
+                {link}
+                {isActive === link && (
+                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-[#334aae]"></span>
+                )}
+              </button>
+            </li>
+          ))}
         </ul>
         <div
           className="bg-[#223343] rounded-2xl flex items-center justify-between w-[5rem] py-[0.2rem] px-1 relative"
