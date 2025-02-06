@@ -29,7 +29,7 @@ const Navbar = () => {
           />
 
           <div
-            className={`sidebar fixed top-0 right-0 flex flex-col gap-3 h-full bg-black text-white shadow-lg transform ${
+            className={`sidebar fixed top-0 right-0 flex flex-col gap-3 h-full bg-white text-black shadow-lg transform ${
               isOpen ? "translate-x-0" : "translate-x-full"
             } transition-transform duration-300 ease-in-out w-64 z-20`}
           >
@@ -41,7 +41,7 @@ const Navbar = () => {
             />
             <div className="flex flex-col gap-3 mt-12 p-3">
               <div
-                className="bg-red-400 rounded-2xl flex items-center justify-between w-[5rem] py-[0.2rem] px-1 relative"
+                className="bg-[#223343] rounded-2xl flex items-center justify-between w-[5rem] py-[0.2rem] px-1 relative"
                 onClick={() => setIsOn(!isOn)}
               >
                 <img src={MoonLight} alt="Moon-icon" />
@@ -56,42 +56,11 @@ const Navbar = () => {
                 <img src={Sun} alt="" className="absolute right-1 z-[2]" />
               </div>
               <ul className="nav-links">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:opacity-90 cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    About us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:opacity-90 cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Product
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:opacity-90 cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Resource
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:opacity-90 cursor-pointer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Contact
-                  </a>
-                </li>
+                {links.map((link)=>(
+                  <li>
+                    <button onClick={()=> setIsOpen(false)} className="hover:opacity-85 cursor-pointer">{link}</button>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
