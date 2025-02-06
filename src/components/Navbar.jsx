@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full max-w-[1440px] mx-auto ">
-      <nav className="w-full px-4 flex items-center justify-between nav-mobile">
+      <nav className="w-full px-4 flex items-center justify-between nav-mobile shadow-lg">
         <div className="flex gap-1 items-center">
           <img src={Favicon} alt="favicon" className="w-12" />
           <p className="font-bold text-2xl">Alarado</p>
@@ -57,7 +57,7 @@ const Navbar = () => {
               </div>
               <ul className="nav-links">
                 {links.map((link)=>(
-                  <li>
+                  <li key={link}>
                     <button onClick={()=> setIsOpen(false)} className="hover:opacity-85 cursor-pointer">{link}</button>
                   </li>
                 ))}
@@ -72,7 +72,7 @@ const Navbar = () => {
           ></div>
         )}
       </nav>
-      <nav className="nav-desktop flex items-center justify-between p-2">
+      <nav className="nav-desktop flex items-center justify-between p-2 shadow-lg">
         <div className="flex items-center gap-2">
           <img src={Favicon} alt="" className="w-12" />
           <h2 className="text-2xl font-bold">Alarado</h2>
