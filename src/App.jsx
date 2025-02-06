@@ -7,6 +7,18 @@ const App = () => {
     <>
       <Navbar />
       <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
+      <HeroSection />
     
     </>
   )

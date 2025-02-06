@@ -15,7 +15,7 @@ const Navbar = () => {
   const links = ["About Us", "Product", "Resource", "Contact"];
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto ">
+    <div className="w-full fixed top-0 left-0 z-50 bg-white">
       <nav className="w-full px-4 flex items-center justify-between nav-mobile shadow-lg">
         <div className="flex gap-1 items-center">
           <img src={Favicon} alt="favicon" className="w-12" />
